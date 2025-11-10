@@ -1,0 +1,220 @@
+/* === General Styles === */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  color: #333;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+/* === Navbar === */
+.navbar {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #e0f2fe;
+}
+
+/* === Hero Section === */
+.hero {
+  position: relative;
+  height: 90vh;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6, #9333ea);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content button {
+  background: white;
+  color: #3b82f6;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hero-content button:hover {
+  transform: scale(1.1);
+  background: #e0f2fe;
+}
+
+/* === Floating Icons Animation === */
+.floating-icons i {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  animation: float 10s infinite;
+}
+
+.floating-icons i:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.floating-icons i:nth-child(2) { top: 50%; left: 70%; animation-delay: 2s; }
+.floating-icons i:nth-child(3) { top: 70%; left: 30%; animation-delay: 4s; }
+.floating-icons i:nth-child(4) { top: 40%; left: 85%; animation-delay: 6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Tracker Section === */
+.tracker {
+  background: #fff;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.tracker form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tracker input, .tracker select {
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  flex: 1 1 150px;
+}
+
+.tracker button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tracker button:hover {
+  background: #2563eb;
+}
+
+.summary {
+  text-align: center;
+  margin-top: 1.5rem;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.chart-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Table === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+th {
+  background: #3b82f6;
+  color: white;
+}
+
+/* === Buttons === */
+.buttons {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  margin: 0.5rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* === Info & Footer === */
+.info-section {
+  padding: 2rem;
+  text-align: center;
+  background: #f0f9ff;
+}
+
+footer {
+  background: #3b82f6;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+

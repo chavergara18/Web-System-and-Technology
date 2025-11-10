@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BudgetFlow - Smart Expense Tracker</title>
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a2e0b5a6e9.js" crossorigin="anonymous"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><i class="fas fa-wallet"></i> BudgetFlow</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main id="home" class="hero">
+    <div class="hero-content">
+      <h1>Take Control of Your Finances</h1>
+      <p>Track income, expenses, and savings — all in one smooth, animated dashboard.</p>
+      <button id="scrollToTracker">Start Tracking</button>
+    </div>
+    <div class="floating-icons">
+      <i class="fas fa-coins"></i>
+      <i class="fas fa-chart-pie"></i>
+      <i class="fas fa-credit-card"></i>
+      <i class="fas fa-money-bill-wave"></i>
+    </div>
+  </main>
+
+  <!-- TRACKER SECTION -->
+  <section id="tracker" class="tracker">
+    <h2>Expense Tracker</h2>
+    <form id="transactionForm">
+      <input type="text" id="description" placeholder="Description" required />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="category">
+        <option value="Income">Income</option>
+        <option value="Food">Food</option>
+        <option value="Bills">Bills</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+      </select>
+      <button type="submit"><i class="fas fa-plus"></i> Add</button>
+    </form>
+
+    <div class="summary">
+      <h3>Summary</h3>
+      <p>Total Balance: ₱<span id="balance">0</span></p>
+      <p>Total Income: ₱<span id="income">0</span></p>
+      <p>Total Expenses: ₱<span id="expenses">0</span></p>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-container">
+      <canvas id="expenseChart"></canvas>
+    </div>
+
+    <table id="transactionTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="buttons">
+      <button id="clearAll"><i class="fas fa-trash"></i> Clear All</button>
+      <button id="exportData"><i class="fas fa-download"></i> Export JSON</button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="info-section">
+    <h2>About BudgetFlow</h2>
+    <p>BudgetFlow helps you visualize your spending and stay on top of your goals with live charts, simple inputs, and instant updates.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="info-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 BudgetFlow. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
