@@ -4,109 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BudgetFlow - Smart Expense Tracker</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <!-- Normalize CSS -->
   <link rel="stylesheet" href="normalize.css" />
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
-  <!-- FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/a2e0b5a6e9.js" crossorigin="anonymous"></script>
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo"><i class="fas fa-wallet"></i> BudgetFlow</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <main id="home" class="hero">
-    <div class="hero-content">
-      <h1>Take Control of Your Finances</h1>
-      <p>Track income, expenses, and savings — all in one smooth, animated dashboard.</p>
-      <button id="scrollToTracker">Start Tracking</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">
+        <i class="bi bi-cash-stack me-2"></i>BudgetFlow
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="floating-icons">
-      <i class="fas fa-coins"></i>
-      <i class="fas fa-chart-pie"></i>
-      <i class="fas fa-credit-card"></i>
-      <i class="fas fa-money-bill-wave"></i>
-    </div>
-  </main>
+  </nav>
 
-  <!-- TRACKER SECTION -->
-  <section id="tracker" class="tracker">
-    <h2>Expense Tracker</h2>
-    <form id="transactionForm">
-      <input type="text" id="description" placeholder="Description" required />
-      <input type="number" id="amount" placeholder="Amount" required />
-      <select id="category">
-        <option value="Income">Income</option>
-        <option value="Food">Food</option>
-        <option value="Bills">Bills</option>
-        <option value="Transport">Transport</option>
-        <option value="Entertainment">Entertainment</option>
-      </select>
-      <button type="submit"><i class="fas fa-plus"></i> Add</button>
-    </form>
-
-    <div class="summary">
-      <h3>Summary</h3>
-      <p>Total Balance: ₱<span id="balance">0</span></p>
-      <p>Total Income: ₱<span id="income">0</span></p>
-      <p>Total Expenses: ₱<span id="expenses">0</span></p>
-    </div>
-
-    <!-- CHART -->
-    <div class="chart-container">
-      <canvas id="expenseChart"></canvas>
-    </div>
-
-    <table id="transactionTable">
-      <thead>
-        <tr>
-          <th>Description</th>
-          <th>Amount</th>
-          <th>Category</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <div class="buttons">
-      <button id="clearAll"><i class="fas fa-trash"></i> Clear All</button>
-      <button id="exportData"><i class="fas fa-download"></i> Export JSON</button>
+  <!-- Hero Section -->
+  <section id="home" class="hero d-flex align-items-center justify-content-center text-center text-white">
+    <div class="container fade-in">
+      <h1 class="display-4 fw-bold mb-3">Take Control of Your Finances</h1>
+      <p class="lead mb-4">Track your expenses effortlessly and make smarter spending decisions with BudgetFlow.</p>
+      <a href="#dashboard" class="btn btn-primary btn-lg shadow"><i class="bi bi-graph-up me-2"></i>Get Started</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="info-section">
-    <h2>About BudgetFlow</h2>
-    <p>BudgetFlow helps you visualize your spending and stay on top of your goals with live charts, simple inputs, and instant updates.</p>
+  <!-- About Section -->
+  <section id="about" class="py-5 bg-light fade-in">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">About BudgetFlow</h2>
+        <p class="text-muted">A simple yet powerful expense tracker built to help you manage your budget efficiently.</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <i class="bi bi-piggy-bank fs-1 text-primary mb-3"></i>
+          <h5>Smart Saving</h5>
+          <p>Visualize your spending and identify areas where you can save more.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-bar-chart-line fs-1 text-success mb-3"></i>
+          <h5>Data Insights</h5>
+          <p>Track your expenses by category and get real-time data insights.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-lock fs-1 text-danger mb-3"></i>
+          <h5>Secure & Private</h5>
+          <p>Your data stays private and stored securely in your browser.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="info-section">
-    <h2>Contact Us</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="py-5 fade-in">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Expense Dashboard</h2>
+      <div class="card p-4 shadow-lg border-0 rounded-4">
+        <form id="expense-form" class="row g-3">
+          <div class="col-md-4">
+            <input type="text" id="description" class="form-control" placeholder="Description" required />
+          </div>
+          <div class="col-md-3">
+            <input type="number" id="amount" class="form-control" placeholder="Amount (₱)" required />
+          </div>
+          <div class="col-md-3">
+            <input type="date" id="date" class="form-control" required />
+          </div>
+          <div class="col-md-2 d-grid">
+            <button type="submit" class="btn btn-success"><i class="bi bi-plus-circle me-1"></i>Add</button>
+          </div>
+        </form>
+
+        <hr />
+
+        <table class="table table-hover text-center align-middle mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th>Description</th>
+              <th>Amount (₱)</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 BudgetFlow. All Rights Reserved.</p>
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light fade-in">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow p-4 border-0 rounded-4">
+            <p class="text-center mb-4 text-muted">
+              Have a question or feedback? We'd love to hear from you!
+            </p>
+            <form id="contact-form">
+              <div class="mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 rounded-pill">
+                <i class="bi bi-send-fill me-1"></i>Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-3 bg-dark text-center text-white">
+    <p class="mb-0">&copy; 2025 BudgetFlow | Built with 💙 using HTML, CSS, JS & Bootstrap</p>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
